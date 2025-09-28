@@ -1,0 +1,156 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e0e0e0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    width: 300px;
+    background-color: #1a1a1a; 
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.display-area {
+    background-color: #000;
+    border-radius: 20px;
+    padding: 20px 15px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: #fff;
+    font-size: 3.5em;
+    position: relative;
+    overflow: hidden;
+}
+
+.history-icon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 1em;
+    color: #e0e0e0;
+}
+
+.output {
+    width: 100%;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    padding-top: 20px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr); 
+    gap: 15px;
+}
+
+/* New style for the CALCULATOR text label */
+.calculator-label {
+    grid-column: 1 / span 2; /* Span the first two columns */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #555; /* Subtle dark gray text */
+    letter-spacing: 1px;
+    padding-left: 10px; 
+}
+
+.button {
+    background-color: #333; 
+    color: #e0e0e0; 
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Empty button style for invisible spacing */
+.button.empty {
+    background-color: transparent;
+    box-shadow: none;
+    cursor: default;
+    font-size: 0; 
+}
+
+/* Operator buttons (DEL, /, -, x, +) are pink with dark text */
+.button.operator {
+    background-color: #fcb3b3; 
+    color: #1a1a1a; 
+}
+
+/* DEL button specific styling */
+.button.del-button {
+    font-size: 1.2em; /* Smaller font for DEL text */
+}
+
+/* Equals button */
+.button.equals {
+    background-color: #f7a2a2; 
+    color: #1a1a1a; 
+}
+
+/* Ensures number buttons have the light text color */
+.button:not(.operator):not(.equals):not(.empty) {
+    color: #e0e0e0;
+}
+
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 400px) {
+    .calculator {
+        width: 90%; 
+        max-width: 300px;
+        padding: 15px; 
+        gap: 10px;
+    }
+
+    .display-area {
+        height: 100px; 
+        padding: 15px 10px;
+    }
+
+    .output {
+        font-size: 3em; 
+
+    .buttons {
+        gap: 10px; 
+    }
+
+    .button {
+        width: 55px; 
+        height: 55px;
+        font-size: 1.3em; 
+    }
+
+    .calculator-label {
+        font-size: 0.7em; 
+    }
+    }}
